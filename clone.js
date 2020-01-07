@@ -103,7 +103,7 @@ function clone(parent, circular, depth, prototype, includeNonEnumerable) {
       if (parent.lastIndex) child.lastIndex = parent.lastIndex;
     } else if (clone.__isDate(parent)) {
       child = new Date(parent.getTime());
-    } else if (useBuffer && Buffer.isBuffer(parent)) {
+    } else if (useBuffer && Buffer.isBuffer && Buffer.isBuffer(parent)) {
       if (Buffer.from) {
         // Node.js >= 5.10.0
         child = Buffer.from(parent);
